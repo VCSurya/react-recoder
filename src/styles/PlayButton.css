@@ -1,0 +1,54 @@
+.play {
+  position: fixed;
+  bottom: 20px;
+  right: 350px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4c53af, #5645a0);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.play:active {
+  transform: scale(0.95);
+}
+
+.play::before {
+  content: "▶";
+  margin-left: 3px;
+}
+
+.play.running {
+  animation: pulse 1.5s infinite;
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+}
+
+.play.running::before {
+  content: "⏸";
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+} 
